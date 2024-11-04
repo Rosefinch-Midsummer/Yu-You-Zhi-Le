@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>萤火虫系列 - 豫游之樂</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../前言.html"><strong aria-hidden="true">1.</strong> 前言</a></li><li class="chapter-item expanded affix "><li class="part-title">良辰美景</li><li class="chapter-item expanded affix "><li class="part-title">游戏</li><li class="chapter-item expanded "><a href="../Game/角色扮演.html"><strong aria-hidden="true">2.</strong> 角色扮演</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Game/《求生之路 2》.html"><strong aria-hidden="true">2.1.</strong> 求生之路2</a></li><li class="chapter-item expanded "><a href="../Game/《上古卷轴V：天际》.html"><strong aria-hidden="true">2.2.</strong> 上古卷轴5</a></li></ol></li><li class="chapter-item expanded "><a href="../Game/即时战略.html"><strong aria-hidden="true">3.</strong> 即时战略</a></li><li class="chapter-item expanded "><a href="../Game/模拟经营.html"><strong aria-hidden="true">4.</strong> 模拟经营</a></li><li class="chapter-item expanded affix "><li class="part-title">影视剧</li><li class="chapter-item expanded "><a href="../Video/华语影视剧.html"><strong aria-hidden="true">5.</strong> 华语</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Video/《魔幻手机》.html"><strong aria-hidden="true">5.1.</strong> 魔幻手机</a></li></ol></li><li class="chapter-item expanded "><a href="../Video/日韩影视剧.html"><strong aria-hidden="true">6.</strong> 日韩</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Video/《非自然死亡》.html"><strong aria-hidden="true">6.1.</strong> 非自然死亡</a></li><li class="chapter-item expanded "><a href="../Video/《第五共和国》.html"><strong aria-hidden="true">6.2.</strong> 第五共和国</a></li><li class="chapter-item expanded "><a href="../Video/《搞笑一家人》.html"><strong aria-hidden="true">6.3.</strong> 搞笑一家人</a></li></ol></li><li class="chapter-item expanded "><a href="../Video/欧美影视剧.html"><strong aria-hidden="true">7.</strong> 欧美</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Video/《萤火虫》.html" class="active"><strong aria-hidden="true">7.1.</strong> 萤火虫系列</a></li><li class="chapter-item expanded "><a href="../Video/《希特勒回来了》.html"><strong aria-hidden="true">7.2.</strong> 希特勒回来了</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">音乐</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">豫游之樂</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="萤火虫"><a class="header" href="#萤火虫">《萤火虫》</a></h1>
+<ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%89%A7%E6%83%85%E7%AE%80%E4%BB%8B">剧情简介</a></li>
+<li><a href="#%E5%88%86%E9%9B%86%E5%89%A7%E6%83%85">分集剧情</a>
+<ul>
+<li><a href="#%E7%AC%AC1%E9%9B%86-%E5%AE%81%E9%9D%99%E5%8F%B7">第1集 宁静号</a></li>
+<li><a href="#%E7%AC%AC2%E9%9B%86-%E7%81%AB%E8%BD%A6%E4%BB%BB%E5%8A%A1">第2集 火车任务</a></li>
+<li><a href="#%E7%AC%AC3%E9%9B%86-%E6%8A%AB%E8%8D%86%E6%96%A9%E6%A3%98">第3集 披荆斩棘</a></li>
+<li><a href="#%E7%AC%AC4%E9%9B%86-%E7%A4%BE%E4%BA%A4%E6%B4%BE%E5%AF%B9">第4集 社交派对</a></li>
+<li><a href="#%E7%AC%AC5%E9%9B%86-%E5%AE%89%E5%85%A8">第5集 安全</a></li>
+<li><a href="#%E7%AC%AC6%E9%9B%86-%E8%88%B0%E9%95%BF%E5%A4%AB%E4%BA%BA">第6集 舰长夫人</a></li>
+<li><a href="#%E7%AC%AC7%E9%9B%86-%E8%8B%B1%E9%9B%84%E5%B0%8F%E9%95%87">第7集 英雄小镇</a></li>
+<li><a href="#%E7%AC%AC8%E9%9B%86-%E6%B2%A1%E6%B0%94">第8集 没气</a></li>
+<li><a href="#%E7%AC%AC9%E9%9B%86-%E8%99%8E%E7%A9%B4">第9集 虎穴</a></li>
+<li><a href="#%E7%AC%AC10%E9%9B%86-%E6%88%98%E4%BA%89%E6%95%85%E4%BA%8B">第10集 战争故事</a></li>
+<li><a href="#%E7%AC%AC11%E9%9B%86-%E5%9E%83%E5%9C%BE">第11集 垃圾</a></li>
+<li><a href="#%E7%AC%AC12%E9%9B%86-%E8%AE%AF%E6%81%AF">第12集 讯息</a></li>
+<li><a href="#%E7%AC%AC13%E9%9B%86-%E9%BB%84%E9%87%91%E4%B9%8B%E5%BF%83">第13集 黄金之心</a></li>
+<li><a href="#%E7%AC%AC14%E9%9B%86-%E5%A4%AA%E7%A9%BA%E7%89%A9%E4%BD%93">第14集 太空物体</a></li>
+</ul>
+</li>
+<li><a href="#%E7%94%B5%E5%BD%B1%E5%86%B2%E5%87%BA%E5%AE%81%E9%9D%99%E5%8F%B7">电影《冲出宁静号》</a>
+<ul>
+<li><a href="#%E4%B8%BB%E9%A2%98%E6%9B%B2firefly-theme-lyrics">主题曲Firefly Theme Lyrics</a></li>
+<li><a href="#%E5%89%A7%E6%83%85%E7%AE%80%E4%BB%8B-1">剧情简介</a></li>
+<li><a href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3">核心思想</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="简介"><a class="header" href="#简介">简介</a></h2>
+<p><a href="https://www.meijutt.cc/meijutt/7999.html">美剧天堂观看</a></p>
+<p>故事发生在遥远的未来世界，此时，人类对于太空的勘探已经发展到了成熟的阶段，梅尔（内森·菲利安 Nathan Fillion 饰）是太空船“宁静号”的船长，每一日，梅尔都驾驶着他的“家”，穿梭在浩瀚的宇宙之中。</p>
+<p>宁静号拥有九名乘客，这九人地位悬殊，个性迥异，每一个人都有着一段不可告人的灰暗往事，而他们脱离陆地登上宁静号，亦有着各自不同的理由。九人唯一的共同点在于，他们都是地上世界中的“刺头”。为了维持生计，宁静号接纳一切能够赚钱的任务，其中甚至有些看起来并不是那么合法，与此同时，梅尔船长亦要带领他的船员们设法逃脱联邦政府的追踪。</p>
+<p>《萤火虫》（Firefly）是乔斯·韦登自制自编自导的美国科幻电视剧，2002年9月20日首播，共1季14集。该剧在福克斯电视台首播，播出11集后由于收视率不佳而于2002年12月被停播，但却因其魅力建立起了独特的粉丝文化与基础，得以于2005年推出续集电影《冲出宁静号》。</p>
+<p>该剧创作灵感源于南北战争，背景设定在2517年，一群边缘人驾驶一艘“萤火虫级”太空船“宁静号”在宇宙中寻找各自的价值和出路。</p>
+<h1 id="剧情简介"><a class="header" href="#剧情简介">剧情简介</a></h1>
+<p>《萤火虫》的背景设定在2517年，人类在耗尽地球资源后找到了一个新的星系，数百个新的地球被人们改造和居住。星系中心的星球组成了联盟，并主张对整个星系的控制权。在一场类似美国南北战争的内战结束后，许多遭到排挤的独立派人被迫来到星系的荒凉边缘，依靠基本的生存技能谋生。其中一位就是老兵马尔科姆·雷诺，他和一群边缘人驾驶一艘“萤火虫级”太空船“宁静号”在宇宙中寻找各自的价值和出路。</p>
+<p>“宁静号”上共有船员9人，最开始由6人组成：船长马尔科姆率领一名大副、一名飞行员、一名机械师、一名雇佣军人，以及一名租借飞船逃生的魅姬。在某次运送乘客的生意中又网罗了3名乘客，9个完全不同性格的人聚到一起，共同在船上展开了一段段与众不同的冒险生活。 9位船员有着9种完全不同的性格，代表了相互独立却又不得不捆绑在一起的9种人生。所谓人无完人，正是带着缺点的每个人，让这个集体更加有魅力。</p>
+<h1 id="分集剧情"><a class="header" href="#分集剧情">分集剧情</a></h1>
+<h2 id="第1集-宁静号"><a class="header" href="#第1集-宁静号">第1集 宁静号</a></h2>
+<p>老兵马尔科姆·雷诺带领宁静号的船员从联盟失事飞船处打捞了一大批货物，约好的买主却拒绝交易，他不得不寻找新的买主，只得去见从前的宿敌，与此同时，一批新的船员加入。</p>
+<h2 id="第2集-火车任务"><a class="header" href="#第2集-火车任务">第2集 火车任务</a></h2>
+<p>宁静号从一个臭名昭著的黑帮首领处接到了一个从列车上偷取联盟货物的活儿，却发现它们是当地居民急需的药品，马尔和佐伊必须做出选择。</p>
+<h2 id="第3集-披荆斩棘"><a class="header" href="#第3集-披荆斩棘">第3集 披荆斩棘</a></h2>
+<p>宁静号发现了一艘被废弃的民用飞船，但在调查过程中却发现这艘船遭到了恐怖的掠夺者的攻击，船上还有一位受到严重惊吓的乘客。与此同时，一艘联盟飞船也在逼近。</p>
+<h2 id="第4集-社交派对"><a class="header" href="#第4集-社交派对">第4集 社交派对</a></h2>
+<p>马尔急于寻找新任务，他来到某星球上流社会举办的社交派对面见客户，却在那里发现了伊诺拉和她的新客户，由于一次意外，马尔不得不为伊诺拉的荣誉而与他决斗。</p>
+<h2 id="第5集-安全"><a class="header" href="#第5集-安全">第5集 安全</a></h2>
+<p>西蒙和瑞芙被某偏僻星球急需医生的的村民绑架，瑞芙被迷信的村民认定为女巫而面临着被烧死的危险。与此同时宁静号因布克牧师的枪伤而不得不求助于联盟飞船。</p>
+<h2 id="第6集-舰长夫人"><a class="header" href="#第6集-舰长夫人">第6集 舰长夫人</a></h2>
+<p>在一个低技术星球停留一夜后，马尔在船上发现一名偷渡客，而她竟声称自己是他的妻子，这名女子在船上引发了轩然大波。</p>
+<h2 id="第7集-英雄小镇"><a class="header" href="#第7集-英雄小镇">第7集 英雄小镇</a></h2>
+<p>宁静号来到一座将杰恩供奉为英雄的小镇，并希望能逃过当局对他们走私货物的追查。</p>
+<h2 id="第8集-没气"><a class="header" href="#第8集-没气">第8集 没气</a></h2>
+<p>宁静号在深空航行时发生了一次严重事故，氧气很快就会用光。船员们不得不疏散，留下船长寻找求生之道。在危急时刻，船长回忆起了这艘船的历史。</p>
+<h2 id="第9集-虎穴"><a class="header" href="#第9集-虎穴">第9集 虎穴</a></h2>
+<p>宁静号来到了联盟的中央星球，船员们将要冒险帮助西蒙和他的妹妹潜入当地医院以对她进行大脑检测。</p>
+<h2 id="第10集-战争故事"><a class="header" href="#第10集-战争故事">第10集 战争故事</a></h2>
+<p>马尔和沃什在一次普通任务中被老仇敌黑帮首领尼斯卡绑架，船员们策划了一次大胆的解救行动。</p>
+<h2 id="第11集-垃圾"><a class="header" href="#第11集-垃圾">第11集 垃圾</a></h2>
+<p>由于急需任务，马尔只得和他的职业诈骗犯前妻Saffron共同策划一次从她的老相识那里偷取一枚强大武器的行动。</p>
+<h2 id="第12集-讯息"><a class="header" href="#第12集-讯息">第12集 讯息</a></h2>
+<p>佐伊和马尔收到了一份特殊的邮件——他们在战争期间一位战友的遗体，这位战友希望他们带他回家安息。</p>
+<h2 id="第13集-黄金之心"><a class="header" href="#第13集-黄金之心">第13集 黄金之心</a></h2>
+<p>伊诺拉一位朋友经营的妓院受到当地一位强势人物的威胁，这位强人认为某位妓女怀了他的孩子，而他打算将其要回。宁静号的船员决定帮助她们。</p>
+<h2 id="第14集-太空物体"><a class="header" href="#第14集-太空物体">第14集 太空物体</a></h2>
+<p>瑞芙的精神状况引起了宁静号船员的忧虑，但他们却不知道有一位全副武装的赏金猎人正在太空中虎视眈眈。</p>
+<h1 id="电影冲出宁静号"><a class="header" href="#电影冲出宁静号">电影《冲出宁静号》</a></h1>
+<h2 id="主题曲firefly-theme-lyrics"><a class="header" href="#主题曲firefly-theme-lyrics">主题曲Firefly Theme Lyrics</a></h2>
+<p>The Ballad of Serenity Lyrics by Joss Whedon</p>
+<p>(written by Joss Whedon, performed by Sonny Rhodes)</p>
+<p>Take my love, take my land,<br />
+Take me where I cannot stand.<br />
+I don't care, I'm still free,<br />
+You can't take the sky from me.</p>
+<p>Take me out to the black,<br />
+Tell them I ain't comin back.<br />
+Burn the land and boil the sea,<br />
+You can't take the sky from me.</p>
+<p>There's no place, I can be,<br />
+Since I've found Serenity.</p>
+<p>And you can't take the sky from me.</p>
+<p>Full version:</p>
+<p>(*Note: unverified submission)</p>
+<p>Take my love, take my land<br />
+Take me where I cannot stand<br />
+I don't care, I'm still free<br />
+You can't take the sky from me.</p>
+<p>Take me out to the black<br />
+Tell them I ain't comin' back<br />
+Burn the land and boil the sea<br />
+You can't take the sky from me.</p>
+<p>Leave the men where they lay<br />
+They'll never see another day<br />
+Lost my soul, lost my dream<br />
+You can't take the sky from me.</p>
+<p>I feel the black reaching out<br />
+I hear its song without a doubt<br />
+I still hear and I still see<br />
+That you can't take the sky from me.</p>
+<p>Lost my love, lost my land<br />
+Lost the last place I could stand<br />
+There's no place I can be<br />
+Since I've found Serenity</p>
+<p>And you can't take the sky from me.</p>
+<p>source: https://www.lyricsondemand.com/tvthemes/fireflylyrics.html</p>
+<h2 id="剧情简介-1"><a class="header" href="#剧情简介-1">剧情简介</a></h2>
+<p>遥远的未来，人类离开不堪负荷的地球，在新的星系延续了文明，那些星系中心的星球组成联盟，不断尝试将偏远的蛮荒星球纳入势力范围。少女瑞娃（Summer Glau 饰）在联盟的这一政策下被改造成为感觉敏锐、身手矫健的战斗机器。瑞娃之兄西蒙将其救出，带到了前抵抗组织成员——马尔 （Nathan Fillion 饰）的运输飞船——“宁静号”上。另一方面，联盟议会为防止瑞娃可能掌握的情报外泄，派出手段毒辣的特使追索不休。马尔一行因瑞娃的战斗模式被联盟唤醒而多次陷入险境，船员们不得不在毫无理性的宇宙掠夺者和联盟的阻击中艰难前往边缘之地——米兰达，在那里，埋藏着一段联盟不愿示人的罪恶往事……</p>
+<h2 id="核心思想"><a class="header" href="#核心思想">核心思想</a></h2>
+<p>米兰达星球的毁灭便是对乌托邦思想的绝杀。出于让人们消除侵略性，星际联盟释放了 Pax 气体，让米兰达星球上的大多数人“永远消除了侵略性”，少数人则变成了“嗜血成性”喜欢吃活人的掠夺者。</p>
+<p>这种灾难一直被星际联盟隐瞒直到最后被主角组曝光！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Rosefinch-Midsummer/MyImagesHost02/img/20240429225524.png" alt="" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Rosefinch-Midsummer/MyImagesHost02/img/20240429225616.png" alt="" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Rosefinch-Midsummer/MyImagesHost02/img/20240429225732.png" alt="" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Rosefinch-Midsummer/MyImagesHost02/img/20240429225758.png" alt="" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Rosefinch-Midsummer/MyImagesHost02/img/20240429225838.png" alt="" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Video/欧美影视剧.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../Video/《希特勒回来了》.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Video/欧美影视剧.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../Video/《希特勒回来了》.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

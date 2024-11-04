@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>希特勒回来了 - 豫游之樂</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../前言.html"><strong aria-hidden="true">1.</strong> 前言</a></li><li class="chapter-item expanded affix "><li class="part-title">良辰美景</li><li class="chapter-item expanded affix "><li class="part-title">游戏</li><li class="chapter-item expanded "><a href="../Game/角色扮演.html"><strong aria-hidden="true">2.</strong> 角色扮演</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Game/《求生之路 2》.html"><strong aria-hidden="true">2.1.</strong> 求生之路2</a></li><li class="chapter-item expanded "><a href="../Game/《上古卷轴V：天际》.html"><strong aria-hidden="true">2.2.</strong> 上古卷轴5</a></li></ol></li><li class="chapter-item expanded "><a href="../Game/即时战略.html"><strong aria-hidden="true">3.</strong> 即时战略</a></li><li class="chapter-item expanded "><a href="../Game/模拟经营.html"><strong aria-hidden="true">4.</strong> 模拟经营</a></li><li class="chapter-item expanded affix "><li class="part-title">影视剧</li><li class="chapter-item expanded "><a href="../Video/华语影视剧.html"><strong aria-hidden="true">5.</strong> 华语</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Video/《魔幻手机》.html"><strong aria-hidden="true">5.1.</strong> 魔幻手机</a></li></ol></li><li class="chapter-item expanded "><a href="../Video/日韩影视剧.html"><strong aria-hidden="true">6.</strong> 日韩</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Video/《非自然死亡》.html"><strong aria-hidden="true">6.1.</strong> 非自然死亡</a></li><li class="chapter-item expanded "><a href="../Video/《第五共和国》.html"><strong aria-hidden="true">6.2.</strong> 第五共和国</a></li><li class="chapter-item expanded "><a href="../Video/《搞笑一家人》.html"><strong aria-hidden="true">6.3.</strong> 搞笑一家人</a></li></ol></li><li class="chapter-item expanded "><a href="../Video/欧美影视剧.html"><strong aria-hidden="true">7.</strong> 欧美</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Video/《萤火虫》.html"><strong aria-hidden="true">7.1.</strong> 萤火虫系列</a></li><li class="chapter-item expanded "><a href="../Video/《希特勒回来了》.html" class="active"><strong aria-hidden="true">7.2.</strong> 希特勒回来了</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">音乐</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">豫游之樂</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="他回来了"><a class="header" href="#他回来了">他回来了</a></h1>
+<ul>
+<li><a href="#%E7%94%B5%E5%BD%B1%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF">电影基本信息</a></li>
+<li><a href="#%E6%83%85%E8%8A%82%E6%A6%82%E8%BF%B0">情节概述</a></li>
+<li><a href="#%E7%BB%8F%E5%85%B8%E6%A2%97">经典梗</a></li>
+<li><a href="#%E8%AF%84%E8%AE%BA">评论</a></li>
+</ul>
+<h2 id="电影基本信息"><a class="header" href="#电影基本信息">电影基本信息</a></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/Rosefinch-Midsummer/MyImagesHost04/img/20240901002030.png" alt="" /></p>
+<p>德语名：Er ist wieder da </p>
+<p>上映时间：西元 2015 年</p>
+<p>导演：大卫・韦恩特</p>
+<p>编剧：大卫・韦恩特 / 蒂穆尔・韦尔梅什 / 约翰内斯・博斯 / 米齐・迈尔</p>
+<p>主演：奥利弗・马苏奇 / 法比安・布施 / 克里斯托夫・玛丽亚・赫布斯特 / 卡蒂娅・里曼 / 弗郎西斯卡・沃芙</p>
+<p>类型：喜剧</p>
+<p>官方网站: www.constantin-film.de/kino/er-ist-wieder-da/</p>
+<p>制片国家 / 地区：德国</p>
+<p>语言：德语</p>
+<p>上映日期: 2015-10-08（德国）</p>
+<p>片长: 116 分钟</p>
+<h2 id="情节概述"><a class="header" href="#情节概述">情节概述</a></h2>
+<p>《希特勒回来了》（德语：Er ist wieder da，英语：Look Who's Back）是由大卫・温德执导的 2015 年德国喜剧电影。该电影改编提莫・魏穆斯关于阿道夫・希特勒的同名讽刺小说。电影讲述奥立佛麦苏希扮演的希特勒从 1945 的纳粹德国穿越时空来到 2014 年的德意志联邦共和国，并从当代社会中再次发现崛起机会的讽刺性寓言。</p>
+<p>影片讲述了 2014 年的一天，希特勒（奥利佛・马萨奇饰）回来了，一个人醒在这一年夏日清晨 8 点 45 分的阳光里，熟悉的柏林街头不再，身边没有了亲信，消失的帝国总理府已经回不去，更让他困惑的是，波兰还依旧存在，德国现在的总理居然是个女的。因为实在太像希特勒，希特勒被电视节目制作人相中，结果第一次出演节目就爆了，随后，节目片段在 Youtube 上点击率激增，各种采访邀约都来了。回到现代社会的希特勒，竟然阴差阳错成为了一个明星，在影片的故事情节中，没有人认为这个希特勒就是真的 “希特勒”，他们都把他当做一个想要讽刺希特勒的演员。于是，在现代社会希特勒成为了一名脱口秀明星。</p>
+<p>影片中有一些希特勒出现在街头类似偷拍的镜头，事先没有经过排练，街上的行人们的反应是真实的，而希特勒的台词也是由演员奥利弗・马萨齐自由发挥。</p>
+<h2 id="经典梗"><a class="header" href="#经典梗">经典梗</a></h2>
+<p>闪电洗衣店</p>
+<p>在开篇场景中，摄像机采用从天空向地面的俯视视角，在这里致敬了 1932 年的纳粹宣传电影《意志的胜利》（莱妮・里芬斯塔尔执导）。</p>
+<p>塞森布林克得知电视台收视率下降以及《你好，老头》停播的消息时，用颤抖的左手摘下了眼睛又大发雷霆，这段镜头模仿了影片《帝国的毁灭》中 “元首的愤怒” 的片段。</p>
+<h2 id="评论"><a class="header" href="#评论">评论</a></h2>
+<p>我最喜欢的细节是，老百姓可以容忍希特勒的政治态度，但是一旦得知他曾经杀掉一只狗，就背弃了他。这看上去有点可笑，主次不分，但是公众决策的机制就是这样：理性的影响微乎其微，甚至不需要复杂的操纵。</p>
+<p>《希特勒回来了》这部电影的有趣之处在于，用纯虚构甚至荒唐的方式深入了那些平时不便谈及的现实问题，诸如人们对于种族间的矛盾分歧，诸如最近一段时间尤为明显的涌入欧洲的难民潮所带来的社会问题，诸如福利国家的懒散，是否需要更集束性的强力等等。而这个战争狂人形象的突然降临，成为了一个破冰者，他没有任何言论顾忌，在惊世骇俗的同时却也戳破了很多人们一直遮掩不提的东西。这部作品之所以能被广泛讨论，就是因为，它不但用一种荒诞的方式呈现了一个严肃故事，更重要的是，它在最后仍然回归了一部严肃作品的警醒性，它仍然像一部警示录那样散发着批判效用。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Video/《萤火虫》.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Video/《萤火虫》.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

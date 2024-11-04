@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>上古卷轴5 - 豫游之樂</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../前言.html"><strong aria-hidden="true">1.</strong> 前言</a></li><li class="chapter-item expanded affix "><li class="part-title">良辰美景</li><li class="chapter-item expanded affix "><li class="part-title">游戏</li><li class="chapter-item expanded "><a href="../Game/角色扮演.html"><strong aria-hidden="true">2.</strong> 角色扮演</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Game/《求生之路 2》.html"><strong aria-hidden="true">2.1.</strong> 求生之路2</a></li><li class="chapter-item expanded "><a href="../Game/《上古卷轴V：天际》.html" class="active"><strong aria-hidden="true">2.2.</strong> 上古卷轴5</a></li></ol></li><li class="chapter-item expanded "><a href="../Game/即时战略.html"><strong aria-hidden="true">3.</strong> 即时战略</a></li><li class="chapter-item expanded "><a href="../Game/模拟经营.html"><strong aria-hidden="true">4.</strong> 模拟经营</a></li><li class="chapter-item expanded affix "><li class="part-title">影视剧</li><li class="chapter-item expanded "><a href="../Video/华语影视剧.html"><strong aria-hidden="true">5.</strong> 华语</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Video/《魔幻手机》.html"><strong aria-hidden="true">5.1.</strong> 魔幻手机</a></li></ol></li><li class="chapter-item expanded "><a href="../Video/日韩影视剧.html"><strong aria-hidden="true">6.</strong> 日韩</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Video/《非自然死亡》.html"><strong aria-hidden="true">6.1.</strong> 非自然死亡</a></li><li class="chapter-item expanded "><a href="../Video/《第五共和国》.html"><strong aria-hidden="true">6.2.</strong> 第五共和国</a></li><li class="chapter-item expanded "><a href="../Video/《搞笑一家人》.html"><strong aria-hidden="true">6.3.</strong> 搞笑一家人</a></li></ol></li><li class="chapter-item expanded "><a href="../Video/欧美影视剧.html"><strong aria-hidden="true">7.</strong> 欧美</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Video/《萤火虫》.html"><strong aria-hidden="true">7.1.</strong> 萤火虫系列</a></li><li class="chapter-item expanded "><a href="../Video/《希特勒回来了》.html"><strong aria-hidden="true">7.2.</strong> 希特勒回来了</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">音乐</li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">豫游之樂</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="上古卷轴v天际"><a class="header" href="#上古卷轴v天际">《上古卷轴V：天际》"</a></h1>
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E6%B8%B8%E6%88%8F%E7%AE%80%E4%BB%8B">游戏简介</a></li>
+<li><a href="#%E6%B8%B8%E6%88%8F%E7%8E%A9%E6%B3%95">游戏玩法</a></li>
+<li><a href="#%E6%A6%82%E8%A6%81">概要</a>
+<ul>
+<li><a href="#%E8%AE%BE%E5%AE%9A">设定</a></li>
+<li><a href="#%E5%89%A7%E6%83%85">剧情</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="前言"><a class="header" href="#前言">前言</a></h1>
+<p>最近内心的极度焦虑让我沉迷游戏，无法自拔……</p>
+<p>好久之前就打算写篇博文介绍一下这个游戏，但是一直没行动。这里纯粹是为水篇博文显得这个月还是有点产出的，不至于很尴尬……</p>
+<p>这个游戏内容十分庞大，设定也十分丰富，无法在一篇博文内完整介绍，这里主要是介绍下新手、老手和毒瘤的开局攻略和有趣的任务情节。</p>
+<p>特别棒的新手攻略有如下的文章：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/59664449">《上古卷轴5：天际》老滚5·有可能是史上最全（cháng）的新手指南&amp;前期攻略&amp;世界设定相关简析</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/613454421">都2023了，还有人在发《上古卷轴五》新人攻略？</a></p>
+<h1 id="游戏简介"><a class="header" href="#游戏简介">游戏简介</a></h1>
+<p>《上古卷轴V：天际》（英语：The Elder Scrolls V: Skyrim，香港和台湾译作“上古卷轴V：无界天际”）是一款奇幻类开放世界型动作角色扮演游戏。作品为上古卷轴系列的第五作，由贝塞斯达游戏工作室开发、贝塞斯达软件公司发布于2011年11月11日，发布平台有Microsoft Windows、PlayStation 3和Xbox 360。</p>
+<p>《天际》的故事背景设定于前作《上古卷轴IV：湮没》世界的200年后，泰姆瑞尔（Tamriel）帝国北方的天际省（Skyrim）在当地的大领主（High King）托雷格（Torygg）遇刺后陷入内战，同时黑色巨龙奥杜因（Alduin）现身于世，要摧毁整个世界。此时天际正处于内战一触即发、梭默（Thalmor）在一旁煽风点火、世界吞噬者奥杜因卷土重来的多重威胁下。玩家扮演预言中的最后一位龙裔（Dragonborn），放逐奥杜因拯救世界。</p>
+<p>其后发行了三个可下载内容（DLC）：《黎明守卫》、《炉火》和《龙裔》，它们被整合于《上古卷轴V：天际 传奇版》（英语：The Elder Scrolls V: Skyrim - Legendary Edition），并于2013年6月发售。游戏于2016年10月在Microsoft Windows、PlayStation 4和Xbox One平台发售了重制版《上古卷轴V：天际 特别版》（英语：The Elder Scrolls V: Skyrim - Special Edition）。此外游戏还在任天堂Switch上发售。2021年11月11日，《上古卷轴V：天际 十周年纪念版》（英语：The Elder Scrolls V: Skyrim – Anniversary Edition）发布，并登陆PS5、PS4、Xbox Series X/S、Xbox One和PC等平台。</p>
+<h1 id="游戏玩法"><a class="header" href="#游戏玩法">游戏玩法</a></h1>
+<p>《上古卷轴》系列中非线性游戏的传统在“天际”中得以保留。游戏可以以第一人称视角进行，通过玩家角色的眼睛观察世界；或以第三人称视角进行，此时玩家角色在屏幕上可见，且相机可以自由旋转。玩家可以走路或骑马来探索天际的开放世界，或者快速旅行至探索过的城市、乡镇与地穴。玩家可在世界各处的非玩家角色（NPC）处接受任务，并且通过辐射式剧情系统，任务可以动态地改变以适应玩家的行动。玩家的行为可能影响到任务、角色以及目标。辐射式剧情还能通过将未探索的地穴设为任务地点的方法来进一步引导玩家与世界的交互。当不在任务状态时，玩家可以通过对话与NPC进行交流，而NPC可能请求玩家提供帮助或训练玩家的技能。除了剧情中的任务外，游戏中还有无穷多动态生成的随机任务。有些NPC能成为玩家的追随者并在战斗中提供帮助。玩家可以加入由一些NPC组织的派系，比如暗黑兄弟会（一个刺客组织）。每个派系都有一个总部与自己的任务渠道。城镇经济的发展可通过农作、采矿等或者在商店中花费大量金币促进。同样城镇经济也能通过伪造业务帐薄与抢劫商店中的保险柜削弱。此外，玩家的行动或言论往往会对NPC的交流造成影响——比如在内战中加入一方或与龙搏斗。在探索游戏世界中，玩家可能会遇到野生动物。旷野中许多野生动物会在遇到玩家后立即对其产生敌意。“天际”中龙的存在对剧情与游玩均造成了极大影响。</p>
+<h1 id="概要"><a class="header" href="#概要">概要</a></h1>
+<h2 id="设定"><a class="header" href="#设定">设定</a></h2>
+<p>在湮灭危机（Oblivion Crisis）过去200多年后，泰姆瑞尔帝国因没有龙裔（Dragonborn）帝王坐镇，正在渐渐失去它原有的地位，新兴起的王朝在与挑战其权威的精灵政权（Aldmeri Dominion）进行了一番艰苦较量之后，不得不与对方签署了白金停战协议（White-Gold Concorda），此妥协意味十足的协议导致帝国内部纷争不断。刀锋护卫（The Blades）没有了效忠的对象，同时也失去了帝国的保护，沦为精灵政权剿灭的目标，成员或遭到暗杀，或被迫躲藏起来。天际省（Skyrim）则因为白金停战协议含有禁止信仰塔洛斯的内容，而引起内讧。鹰派人物，风盔城（Windhelm）领主奥弗瑞克·风暴斗篷向鸽派人物，天际的大领主（High King，又译“至高王”）托瑞格发起挑战，在决斗中依靠龙吼的力量击败并杀死了托瑞格。按照诺德人的古代习俗，这样的决斗结果意味着奥弗瑞克取得了大领主之位；但帝国方面借口在一场刀剑相交的决斗中使用龙吼这种力量是违规的，宣布奥弗瑞克是弑君凶手、叛乱者，内讧终于演变成了内战。这恰恰是上古卷轴（The Elder Scroll）预言中的一部分。预言的第二部分是世界吞噬者奥杜因的回归，伴随着他回归的将是末日的降临。主角则是预言中提到的龙裔，在龙语中“Dovahkiin ”一语双关，既有着龙的血脉，又是屠龙者，最后的龙裔将肩负起抵御世界毁灭的威胁的重任。</p>
+<h2 id="剧情"><a class="header" href="#剧情">剧情</a></h2>
+<p>游戏开始于一队运送俘虏的马车，玩家是一个帝国军的战俘。值得一提的是，这批战俘之中包括奥弗瑞克本人。帝国军将所有战俘押解到一处据点，开始挨个斩首，以绝后患。正当玩家刀斧临身之前的一刹那，一头黑色的巨龙（奥杜因）从天而降，瞬间将刑场变成了巨龙对人的杀戮场。玩家在混乱中借机逃脱，从此开始了命中注定的冒险旅程。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Game/《求生之路 2》.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../Game/即时战略.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Game/《求生之路 2》.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../Game/即时战略.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
